@@ -1,10 +1,10 @@
-var coffeescript = require('coffee-script');
+var coffeescript = require('coffee-react');
 var createFilter = require('rollup-pluginutils').createFilter;
 var objectAssign = require('object-assign');
 var extname = require('path').extname;
 
 module.exports = function coffee(options) {
-  options = objectAssign({}, options || {}, { sourceMap: true, bare: true, extensions: ['.coffee'] });
+  options = objectAssign({}, options || {}, { sourceMap: true, bare: true, extensions: ['.coffee','.cjsx'] });
 
   var filter = createFilter(options.include, options.exclude);
   var extensions = options.extensions;
